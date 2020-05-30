@@ -1,0 +1,68 @@
+import java.util.Stack;
+class Main
+{
+	Stack<Integer> s = new Stack<Integer>();
+	int minval;
+	public void push(int v)
+	{
+		if(s.empty())
+		{
+			s.push();
+			minval=v;
+		}
+		else if(v>min)
+		{
+		s.push(v);
+
+		}
+		else
+		{
+
+		s.push(2*v-minval);
+		minval=v;
+		}
+	
+	}
+
+	public void pop()
+	{
+		if(s.empty())
+		{
+			System.out.print("stack is empty");
+
+		}
+	int top=s.peek();
+	
+	if(top<minval)
+	
+		minval=2*minval-top;
+	
+	s.pop();
+	}
+
+public int minval()
+{
+	return minval;
+}	
+
+public static void main(String[] args)
+{
+Main m = new Main();
+m.push(1);
+System.out.println(m.minval());
+m.push(2);
+System.out.println(m.minval());
+m.push(3);
+System.out.println(m.minval());
+m.push(4);
+System.out.println(m.minval());
+m.pop();
+
+System.out.println(m.minval());
+
+}
+
+
+}
+
+
