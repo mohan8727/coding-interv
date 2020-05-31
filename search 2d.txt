@@ -1,0 +1,38 @@
+class Matrix
+{
+public static  boolean search(int[][]arr, int key)
+{
+if(arr.length==0)
+{
+return false;
+}
+
+int rows=arr.length;
+int cols=arr[0].length;
+int l=0,r=rows*cols-1;
+while(l<=r)
+{
+int mid=(l+r)/2;
+int mid=arr[mid/cols][mid%cols];
+if(key==mid)
+{
+return true;
+}
+else if(key<mid)
+{
+r=mid+1;
+}
+else
+{
+l=mid-1;
+}
+}
+return false;
+}
+public static void  main(String[] args)
+{
+int [][] arr={{1,2,3},{12,13,14},{15,16,17}};
+int key=12;
+System.out.println(search(arr,5));
+}
+}
